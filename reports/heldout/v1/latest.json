@@ -1,0 +1,164 @@
+{
+ "set": "v1",
+ "status": "held-out",
+ "run_at": "2026-10-26T19:54:32+00:00",
+ "campaigns": 5,
+ "systemic_found": {
+  "found": 18,
+  "of": 20,
+  "rate": 0.9
+ },
+ "false_alarms": 2,
+ "chains_broken": 0,
+ "certificates_bad": 0,
+ "unguarded_burns": 0,
+ "results": [
+  {
+   "campaign": "s1-midshift-release",
+   "units": 120,
+   "issues": {
+    "expected": 3,
+    "found": 3,
+    "missed": [],
+    "false_alarms": [],
+    "one_off_groups": 2
+   },
+   "trail": {
+    "chains_broken": 0,
+    "certificates_bad": 0,
+    "released": 79
+   },
+   "irreversible": {
+    "burns": 79,
+    "unguarded": [],
+    "burnt_without_trail": []
+   }
+  },
+  {
+   "campaign": "s2-same-symptom",
+   "units": 180,
+   "issues": {
+    "expected": 4,
+    "found": 4,
+    "missed": [],
+    "false_alarms": [],
+    "one_off_groups": 5
+   },
+   "trail": {
+    "chains_broken": 0,
+    "certificates_bad": 0,
+    "released": 143
+   },
+   "irreversible": {
+    "burns": 143,
+    "unguarded": [],
+    "burnt_without_trail": []
+   }
+  },
+  {
+   "campaign": "s3-usb-trouble",
+   "units": 90,
+   "issues": {
+    "expected": 4,
+    "found": 4,
+    "missed": [],
+    "false_alarms": [
+     {
+      "code": "partition_mismatch",
+      "where": [
+       {
+        "dimension": "fixture",
+        "value": "FX-C"
+       }
+      ],
+      "failures": 8
+     }
+    ],
+    "one_off_groups": 2
+   },
+   "trail": {
+    "chains_broken": 0,
+    "certificates_bad": 0,
+    "released": 66
+   },
+   "irreversible": {
+    "burns": 66,
+    "unguarded": [],
+    "burnt_without_trail": []
+   }
+  },
+  {
+   "campaign": "s4-late-switch",
+   "units": 200,
+   "issues": {
+    "expected": 5,
+    "found": 4,
+    "missed": [
+     {
+      "fault": "s4-eeprom-w44",
+      "code": "eeprom_crc",
+      "codes": [
+       "eeprom_crc"
+      ],
+      "dimension": "orin_batch",
+      "value": "B26W44"
+     }
+    ],
+    "false_alarms": [
+     {
+      "code": "partition_mismatch",
+      "where": [
+       {
+        "dimension": "pmu_lot",
+        "value": "P2610-02"
+       }
+      ],
+      "failures": 16
+     }
+    ],
+    "one_off_groups": 5
+   },
+   "trail": {
+    "chains_broken": 0,
+    "certificates_bad": 0,
+    "released": 121
+   },
+   "irreversible": {
+    "burns": 121,
+    "unguarded": [],
+    "burnt_without_trail": []
+   }
+  },
+  {
+   "campaign": "s5-night-shift",
+   "units": 84,
+   "issues": {
+    "expected": 4,
+    "found": 3,
+    "missed": [
+     {
+      "fault": "s5-op02-pmu",
+      "code": "link_dropped",
+      "codes": [
+       "link_dropped"
+      ],
+      "dimension": "operator",
+      "value": "OP-02"
+     }
+    ],
+    "false_alarms": [],
+    "one_off_groups": 3
+   },
+   "trail": {
+    "chains_broken": 0,
+    "certificates_bad": 0,
+    "released": 33
+   },
+   "irreversible": {
+    "burns": 33,
+    "unguarded": [],
+    "burnt_without_trail": []
+   }
+  }
+ ]
+}

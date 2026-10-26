@@ -1,0 +1,23 @@
+campaign: s4-late-switch
+seed: 702119
+start: "2026-11-06T06:00:00+01:00"
+units: 200
+operators: {ST-1: [OP-07, OP-12, OP-19], ST-2: [OP-21, OP-24]}
+releases:
+  - {release: R2026.09, from_unit: 1}
+  - {release: R2026.10, from_unit: 141}
+mix:
+  fc_rev: {B: 0.24, C: 0.7, D: 0.06}
+  pmu_rev: {A: 0.5, B: 0.5}
+  orin_sku: {"0000": 0.65, "0001": 0.35}
+  fc_lot: {L2610-021: 0.5, L2610-047: 0.3, L2610-063: 0.2}
+  pmu_lot: {P2610-02: 0.7, P2610-15: 0.3}
+  orin_batch: {B26W41: 0.85, B26W44: 0.15}
+faults:
+  - {id: s4-fx-a1-pmu-late, kind: fixture_contact, slot: FX-A/1, target: pmu, p: 0.7, from_unit: 80}
+  - {id: s4-fx-c3-fc, kind: fixture_contact, slot: FX-C/3, target: fc, p: 0.4}
+  - {id: s4-machine-id, kind: baked_machine_id, version: 3.2.0, release: R2026.10}
+  - {id: s4-eeprom-w44, kind: supplier_eeprom_crc, orin_batch: B26W44, p: 0.2}
+  - {id: s4-noise-link, kind: random_link, p: 0.04}
+  - {id: s4-noise-cal, kind: calibration_outlier, target: pmu, p: 0.03}
+  - {id: s4-noise-nvme, kind: nvme_defect, p: 0.02}

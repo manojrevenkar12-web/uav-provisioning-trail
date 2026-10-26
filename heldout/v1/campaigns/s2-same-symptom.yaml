@@ -1,0 +1,22 @@
+campaign: s2-same-symptom
+seed: 88213
+start: "2026-11-04T14:00:00+01:00"
+units: 180
+operators: {ST-1: [OP-04, OP-09, OP-15], ST-2: [OP-22, OP-27]}
+releases:
+  - {release: R2026.10, from_unit: 1}
+mix:
+  fc_rev: {B: 0.25, C: 0.6, D: 0.15}
+  pmu_rev: {A: 0.4, B: 0.6}
+  orin_sku: {"0000": 0.8, "0001": 0.2}
+  fc_lot: {L2610-021: 0.6, L2610-047: 0.4}
+  pmu_lot: {P2608-33: 0.5, P2609-07: 0.2, P2610-02: 0.3}
+  orin_batch: {B26W41: 1.0}
+faults:
+  - {id: s2-op09-pmu, kind: operator_handling, operator: OP-09, target: pmu, p: 0.2}
+  - {id: s2-fx-a3-pmu, kind: fixture_contact, slot: FX-A/3, target: pmu, p: 0.6}
+  - {id: s2-fw-rev-d, kind: firmware_board_gap, target: fc, version: 1.15.0, missing_rev: D}
+  - {id: s2-otp-p2609, kind: supplier_otp_blank, target: pmu, lot: P2609-07, p: 0.3}
+  - {id: s2-noise-link, kind: random_link, p: 0.05}
+  - {id: s2-noise-cal, kind: calibration_outlier, target: fc, p: 0.03}
+  - {id: s2-noise-swap, kind: board_swap, p: 0.02}

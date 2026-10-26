@@ -1,0 +1,21 @@
+campaign: s1-midshift-release
+seed: 41027
+start: "2026-11-03T06:00:00+01:00"
+units: 120
+operators: {ST-1: [OP-07, OP-12], ST-2: [OP-03, OP-21]}
+releases:
+  - {release: R2026.09, from_unit: 1}
+  - {release: R2026.10, from_unit: 61}
+mix:
+  fc_rev: {B: 0.3, C: 0.7}
+  pmu_rev: {A: 0.5, B: 0.5}
+  orin_sku: {"0000": 0.7, "0001": 0.3}
+  fc_lot: {L2609-114: 0.5, L2610-021: 0.5}
+  pmu_lot: {P2608-33: 1.0}
+  orin_batch: {B26W38: 0.6, B26W41: 0.4}
+faults:
+  - {id: s1-fx-b2-fc, kind: fixture_contact, slot: FX-B/2, target: fc, p: 0.7}
+  - {id: s1-eeprom-w41, kind: supplier_eeprom_crc, orin_batch: B26W41, p: 0.25}
+  - {id: s1-payload-0001, kind: service_on_sku, version: 3.2.0, service: payload-bridge.service, sku: "0001"}
+  - {id: s1-noise-link, kind: random_link, p: 0.03}
+  - {id: s1-noise-nvme, kind: nvme_defect, p: 0.02}

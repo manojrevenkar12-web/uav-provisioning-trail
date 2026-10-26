@@ -1,0 +1,21 @@
+campaign: s3-usb-trouble
+seed: 5530
+start: "2026-11-05T06:00:00+01:00"
+units: 90
+operators: {ST-1: [OP-12], ST-2: [OP-03, OP-08]}
+releases:
+  - {release: R2026.09, from_unit: 1}
+mix:
+  fc_rev: {B: 0.9, C: 0.1}
+  pmu_rev: {A: 0.7, B: 0.3}
+  orin_sku: {"0000": 0.5, "0001": 0.5}
+  fc_lot: {L2609-114: 0.45, L2609-140: 0.25, L2609-152: 0.3}
+  pmu_lot: {P2608-33: 0.6, P2608-41: 0.4}
+  orin_batch: {B26W36: 0.5, B26W38: 0.5}
+faults:
+  - {id: s3-cable-a4, kind: usb_cable, slot: FX-A/4, enumerate_fail_p: 0.7, usb2: true}
+  - {id: s3-drop-b1, kind: usb_drop, slot: FX-B/1, p: 0.8}
+  - {id: s3-otp-l140, kind: supplier_otp_blank, target: fc, lot: L2609-140, p: 0.35}
+  - {id: s3-fw-rev-c, kind: firmware_board_gap, target: fc, version: 1.14.2, missing_rev: C}
+  - {id: s3-noise-nvme, kind: nvme_defect, p: 0.04}
+  - {id: s3-noise-swap, kind: board_swap, p: 0.03}

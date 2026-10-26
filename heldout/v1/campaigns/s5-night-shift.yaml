@@ -1,0 +1,21 @@
+campaign: s5-night-shift
+seed: 19
+start: "2026-11-07T22:00:00+01:00"
+units: 84
+operators: {ST-1: [OP-02, OP-31], ST-2: [OP-05]}
+releases:
+  - {release: R2026.10, from_unit: 1}
+mix:
+  fc_rev: {B: 0.2, C: 0.5, D: 0.3}
+  pmu_rev: {A: 0.3, B: 0.7}
+  orin_sku: {"0000": 0.5, "0001": 0.5}
+  fc_lot: {L2610-047: 1.0}
+  pmu_lot: {P2610-02: 0.5, P2610-15: 0.5}
+  orin_batch: {B26W41: 0.4, B26W44: 0.6}
+faults:
+  - {id: s5-op02-pmu, kind: operator_handling, operator: OP-02, target: pmu, p: 0.3}
+  - {id: s5-cable-c2, kind: usb_cable, slot: FX-C/2, enumerate_fail_p: 0.5, usb2: true}
+  - {id: s5-link-0001, kind: service_on_sku, version: 3.2.0, service: uav-link.service, sku: "0001"}
+  - {id: s5-fw-rev-b, kind: firmware_board_gap, target: fc, version: 1.15.0, missing_rev: B}
+  - {id: s5-noise-link, kind: random_link, p: 0.06}
+  - {id: s5-noise-swap, kind: board_swap, p: 0.02}
