@@ -1,0 +1,80 @@
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-7);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: var(--space-4);
+}
+
+.card {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+  padding: var(--space-5);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+  box-shadow:
+    inset 0 3px 0 var(--ink),
+    0 0 0 1px var(--rule);
+}
+
+.card h3 {
+  font-size: var(--text-xl);
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
+.facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.facts dt {
+  color: var(--ink-faint);
+}
+
+.facts dd {
+  margin: 0;
+  font-weight: var(--weight-strong);
+  text-align: right;
+}
+
+.rollout {
+  font-size: var(--text-sm);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--space-3) var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.select {
+  display: grid;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-strong);
+}
+
+.select select {
+  min-width: 10rem;
+  font-weight: var(--weight-body);
+}
+
+.count {
+  margin-bottom: var(--space-3);
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}

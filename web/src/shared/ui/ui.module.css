@@ -1,0 +1,304 @@
+/* Buttons ------------------------------------------------------------------------------------------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--control-height);
+  padding: 0 var(--space-4);
+  border: var(--border-strong);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: var(--weight-strong);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition:
+    background var(--duration-quick) var(--ease-out),
+    border-color var(--duration-quick) var(--ease-out);
+}
+
+.button:hover:not(:disabled) {
+  border-color: var(--ink);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.primary:hover:not(:disabled) {
+  border-color: var(--ink);
+}
+
+.quiet {
+  border-color: transparent;
+  background: transparent;
+  color: var(--accent);
+  padding: 0 var(--space-2);
+}
+
+.quiet:hover:not(:disabled) {
+  border-color: transparent;
+  text-decoration: underline;
+}
+
+.spinner {
+  width: var(--space-3);
+  height: var(--space-3);
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--radius-pill);
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading, empty, failed ---------------------------------------------------------------------------- */
+
+.skeleton {
+  border-radius: var(--radius-control);
+  background: linear-gradient(90deg, var(--surface-sunk), var(--rule), var(--surface-sunk));
+  background-size: 300% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.skeletons {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.state {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+  padding: var(--space-6);
+  border: 1px dashed var(--rule-strong);
+  border-radius: var(--radius-panel);
+  background: var(--surface-sunk);
+}
+
+.state h2 {
+  font-size: var(--text-lg);
+}
+
+.state p {
+  color: var(--ink-soft);
+}
+
+.error {
+  border-style: solid;
+  border-color: var(--block);
+  border-left-width: var(--space-1);
+  background: var(--surface);
+}
+
+.tokenForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.input {
+  min-height: var(--control-height);
+  min-width: 16rem;
+  padding: 0 var(--space-3);
+  border: var(--border-strong);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+}
+
+/* Tags: a square swatch in the RAL colour and a word, never colour alone --------------------------- */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-strong);
+  white-space: nowrap;
+}
+
+.swatch {
+  flex: none;
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 1px;
+  background: var(--ink-faint);
+}
+
+.good .swatch {
+  background: var(--pass);
+}
+
+.watch .swatch {
+  background: var(--warn-fill);
+  box-shadow: inset 0 0 0 1px var(--warn);
+}
+
+.signal .swatch {
+  background: var(--watch);
+}
+
+.orange .swatch {
+  background: var(--orange);
+  border-radius: var(--radius-pill);
+}
+
+.orange {
+  color: var(--orange-ink);
+}
+
+.bad .swatch {
+  background: var(--block);
+}
+
+.info .swatch {
+  background: var(--accent);
+}
+
+.quietTone .swatch {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--ink-faint);
+}
+
+.quietTone {
+  color: var(--ink-soft);
+}
+
+/* Page furniture ------------------------------------------------------------------------------------ */
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.header h1 {
+  font-size: var(--text-3xl);
+  font-variation-settings: "wdth" var(--width-expanded);
+}
+
+.header p {
+  margin-top: var(--space-2);
+  color: var(--ink-soft);
+}
+
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+  align-content: start;
+}
+
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+
+.lead {
+  margin-top: calc(var(--space-2) * -1);
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}
+
+.panel {
+  padding: var(--space-5);
+  border: var(--border);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+}
+
+.figure {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.figureValue {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-figure);
+  font-variation-settings: "wdth" var(--width-expanded);
+  line-height: var(--leading-tight);
+}
+
+.compact .figureValue {
+  font-size: var(--text-lg);
+}
+
+.figureLabel {
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-strong);
+}
+
+.figureNote {
+  color: var(--ink-faint);
+  font-size: var(--text-xs);
+}
+
+.notice {
+  padding: var(--space-3) var(--space-4);
+  border-left: var(--space-1) solid var(--accent);
+  background: var(--accent-wash);
+  font-size: var(--text-sm);
+}
+
+/* Tables --------------------------------------------------------------------------------------------- */
+
+.tableWrap {
+  position: relative;
+  overflow-x: auto;
+  border: var(--border);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+}
+
+.tableWrap table {
+}
+
+.tableWrap th,
+.tableWrap td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border);
+  vertical-align: top;
+}
+
+.tableWrap tr:last-child td {
+  border-bottom: 0;
+}
+
+.num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.quote {
+  font-variation-settings: "wdth" var(--width-expanded);
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+}

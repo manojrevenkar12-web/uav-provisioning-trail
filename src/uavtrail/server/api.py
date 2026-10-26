@@ -150,6 +150,14 @@ def overview(_: Who) -> dict[str, Any]:
     }
 
 
+@app.get("/api/codes")
+def codes_(_: Who) -> dict[str, Any]:
+    """The failure vocabulary (config/codes.yaml): what each code means and who owns it."""
+    from ..config import codes
+
+    return {k: {"label": v.get("label", k), "owner": v.get("owner"), "signal": bool(v.get("signal"))} for k, v in codes().items()}
+
+
 @app.get("/api/slots")
 def slots(_: Who) -> list[dict[str, Any]]:
     """Every slot of the line: what is on it now and how it has done."""
@@ -164,6 +172,15 @@ def slots(_: Who) -> list[dict[str, Any]]:
            from units where slot is not null order by slot, updated_at desc"""
         )
     }
+    recent: dict[str, list[dict[str, Any]]] = {}
+    for r in db.rows(
+        """select slot, unit, status, hold_code from (
+             select slot, unit, status, hold_code, row_number() over (partition by slot order by updated_at desc) as n
+             from units where slot is not null) x
+           where n <= :n order by slot, n desc""",
+        n=12,
+    ):
+        recent.setdefault(r["slot"], []).append({"unit": r["unit"], "status": r["status"], "hold_code": r["hold_code"]})
     out = []
     for station, st in line()["stations"].items():
         for fixture, count in st["fixtures"].items():
@@ -177,6 +194,7 @@ def slots(_: Who) -> list[dict[str, Any]]:
                         "index": i,
                         "current": current.get(name),
                         "stats": stats.get(name),
+                        "recent": recent.get(name, []),
                     }
                 )
     return out

@@ -1,0 +1,98 @@
+{
+  "link_refused": { "label": "Probe cannot attach", "owner": "production", "signal": false },
+  "link_dropped": { "label": "Probe link dropped mid-transfer", "owner": "production", "signal": false },
+  "link_garbled": { "label": "Probe answered nonsense", "owner": "production", "signal": false },
+  "verify_mismatch": { "label": "Image read-back differs", "owner": "production", "signal": false },
+  "config_verify_mismatch": { "label": "Config read-back differs", "owner": "production", "signal": false },
+  "otp_blank": { "label": "No supplier identity on the board", "owner": "supplier", "signal": false },
+  "otp_crc": { "label": "Supplier identity fails its CRC", "owner": "supplier", "signal": false },
+  "board_rev_unsupported": {
+    "label": "Board revision not in the release",
+    "owner": "engineering",
+    "signal": false
+  },
+  "uid_already_registered": {
+    "label": "Board already belongs to another unit",
+    "owner": "quality",
+    "signal": false
+  },
+  "image_too_large": {
+    "label": "Image larger than its flash region",
+    "owner": "engineering",
+    "signal": false
+  },
+  "banner_missing": { "label": "No boot banner", "owner": "engineering", "signal": false },
+  "selftest_timeout": { "label": "Booted, no self-test verdict", "owner": "engineering", "signal": false },
+  "selftest_fail": { "label": "Self-test failed", "owner": "engineering", "signal": false },
+  "version_mismatch": {
+    "label": "Running version is not the released one",
+    "owner": "engineering",
+    "signal": false
+  },
+  "identity_mismatch": {
+    "label": "Booted board is not the one identified",
+    "owner": "quality",
+    "signal": false
+  },
+  "usb_no_device": { "label": "Nothing on the recovery port", "owner": "production", "signal": false },
+  "usb_enumeration_failed": {
+    "label": "Module does not enumerate in recovery mode",
+    "owner": "production",
+    "signal": false
+  },
+  "usb_unexpected_device": {
+    "label": "Wrong device on the recovery port",
+    "owner": "production",
+    "signal": false
+  },
+  "usb_link_lost": { "label": "USB link to the module lost", "owner": "production", "signal": false },
+  "usb_reset_during_flash": { "label": "USB reset during the flash", "owner": "production", "signal": false },
+  "eeprom_unreadable": { "label": "Module EEPROM unreadable", "owner": "supplier", "signal": false },
+  "eeprom_crc": { "label": "Module EEPROM fails its CRC", "owner": "supplier", "signal": false },
+  "module_unsupported": {
+    "label": "Module board id, SKU or FAB not in the release",
+    "owner": "engineering",
+    "signal": false
+  },
+  "partition_mismatch": { "label": "Partition read-back differs", "owner": "production", "signal": false },
+  "boot_failed": { "label": "Module did not boot after the flash", "owner": "engineering", "signal": false },
+  "service_failed": {
+    "label": "A required service failed on first boot",
+    "owner": "engineering",
+    "signal": false
+  },
+  "l4t_mismatch": { "label": "Module runs another L4T release", "owner": "engineering", "signal": false },
+  "machine_id_duplicate": {
+    "label": "Machine-id already used by another unit",
+    "owner": "engineering",
+    "signal": false
+  },
+  "fuse_precondition": { "label": "Fuse burn refused by its guard", "owner": "quality", "signal": false },
+  "fuse_conflict": { "label": "Module already fused differently", "owner": "quality", "signal": false },
+  "release_unverified": {
+    "label": "Release signature or artifacts do not verify",
+    "owner": "engineering",
+    "signal": false
+  },
+  "bundle_mismatch": {
+    "label": "Image bundle differs from the release",
+    "owner": "engineering",
+    "signal": false
+  },
+  "calibration_shape": {
+    "label": "Calibration record has the wrong shape",
+    "owner": "quality",
+    "signal": false
+  },
+  "serial_too_long": {
+    "label": "Unit serial does not fit the config record",
+    "owner": "quality",
+    "signal": false
+  },
+  "registry_unreachable": {
+    "label": "Traceability server unreachable",
+    "owner": "production",
+    "signal": false
+  },
+  "slow_link": { "label": "Module links at USB2, not USB3", "owner": "production", "signal": true }
+}

@@ -1,0 +1,51 @@
+.group {
+  display: inline-flex;
+  gap: var(--space-1);
+  margin: 0;
+  padding: var(--space-1);
+  border: var(--border-strong);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+}
+
+.option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-control);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-strong);
+  cursor: pointer;
+}
+
+.option input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.option:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.marker {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-control);
+  background: var(--ink);
+}
+
+.text {
+  position: relative;
+}
+
+.option:has(input:checked) .text {
+  color: var(--paper);
+}

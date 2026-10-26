@@ -1,0 +1,445 @@
+{
+  "unit": {
+    "unit": "HX2-26-000159",
+    "status": "held",
+    "release": "R2026.10",
+    "station": "ST-1",
+    "slot": "FX-A/2",
+    "step": "orin_identify",
+    "hold_code": "eeprom_crc",
+    "hold_owner": "supplier",
+    "runs": 1,
+    "hold_seconds": 150.0,
+    "first_pass": false,
+    "operator": "OP-12",
+    "dims": {
+      "fc_lot": "L2609-114",
+      "fc_rev": "C",
+      "pmu_lot": "P2610-02",
+      "pmu_rev": "A",
+      "orin_fab": "300",
+      "orin_sku": "0001",
+      "orin_batch": "B26W41"
+    },
+    "started_at": "2026-10-27T07:47:43.514263+01:00",
+    "updated_at": "2026-10-27T07:51:12.558990+01:00",
+    "certificate": null
+  },
+  "events": [
+    {
+      "seq": 1,
+      "kind": "start",
+      "at": "2026-10-27T07:47:43.514263+01:00",
+      "station": "ST-1",
+      "hash": "14f793ff391660577c9cda6d17637601e8d5b35b2dd1a13c7f0629f5d288e4bc",
+      "prev": "d7236f1cfb4e173d09d23b3c78212ce8fdee308addb04ac5f426fc7dc76fd4e2",
+      "data": {
+        "mode": "production",
+        "slot": "FX-A/2",
+        "recipe": "standard@3",
+        "fixture": "FX-A",
+        "release": "R2026.10",
+        "operator": "OP-12",
+        "release_sha256": "e4a51cf4a71ab4fd6c06084e8e54aa1e42dab712530daa156f92d6f1d4166897"
+      }
+    },
+    {
+      "seq": 2,
+      "kind": "intent",
+      "at": "2026-10-27T07:47:43.514263+01:00",
+      "station": "ST-1",
+      "hash": "40ca7af459704cbdac4680a06acd60ed83db8192fe5735b3f3a57e9193f87ef5",
+      "prev": "14f793ff391660577c9cda6d17637601e8d5b35b2dd1a13c7f0629f5d288e4bc",
+      "data": { "slot": "FX-A/2", "step": "scan_unit", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 3,
+      "kind": "result",
+      "at": "2026-10-27T07:47:51.514263+01:00",
+      "station": "ST-1",
+      "hash": "af869b1c23abe5b0d0cca9e4150b5655037f0cc6185720518203f54c68aa1e96",
+      "prev": "40ca7af459704cbdac4680a06acd60ed83db8192fe5735b3f3a57e9193f87ef5",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "scan_unit",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 8.0,
+        "evidence": {
+          "kit": { "fc_lot": "L2609-114", "pmu_lot": "P2610-02", "orin_batch": "B26W41" },
+          "unit": "HX2-26-000159",
+          "operator": "OP-12"
+        }
+      }
+    },
+    {
+      "seq": 4,
+      "kind": "intent",
+      "at": "2026-10-27T07:47:51.514263+01:00",
+      "station": "ST-1",
+      "hash": "5753d21d18f80ffe23cacb809596c7e49409d4a495b15b6759ece761d853d76c",
+      "prev": "af869b1c23abe5b0d0cca9e4150b5655037f0cc6185720518203f54c68aa1e96",
+      "data": { "slot": "FX-A/2", "step": "fc_attach", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 5,
+      "kind": "result",
+      "at": "2026-10-27T07:47:55.514263+01:00",
+      "station": "ST-1",
+      "hash": "27f5594556eed18cd874feaa53828dba75fff6d65a3c4e198dcf1fb89fcb3656",
+      "prev": "5753d21d18f80ffe23cacb809596c7e49409d4a495b15b6759ece761d853d76c",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "fc_attach",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 4.0,
+        "evidence": { "probe": "127.0.0.1:40545", "flash_packets": false }
+      }
+    },
+    {
+      "seq": 6,
+      "kind": "intent",
+      "at": "2026-10-27T07:47:55.514263+01:00",
+      "station": "ST-1",
+      "hash": "6bf53d44da283f08369d0d95b99b0204403be622a7293ae243bee3062b3d96fe",
+      "prev": "27f5594556eed18cd874feaa53828dba75fff6d65a3c4e198dcf1fb89fcb3656",
+      "data": { "slot": "FX-A/2", "step": "fc_identify", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 7,
+      "kind": "result",
+      "at": "2026-10-27T07:47:56.514263+01:00",
+      "station": "ST-1",
+      "hash": "c146734159b287994121280ebbf61a1d18a1ecd5fe7d31fa6f4df1d16c4c389d",
+      "prev": "6bf53d44da283f08369d0d95b99b0204403be622a7293ae243bee3062b3d96fe",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "fc_identify",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 1.0,
+        "evidence": { "lot": "L2609-114", "uid": "9134e12f4f46985d8edd9281", "board_rev": "C" }
+      }
+    },
+    {
+      "seq": 8,
+      "kind": "intent",
+      "at": "2026-10-27T07:47:56.514263+01:00",
+      "station": "ST-1",
+      "hash": "046a28e972461ae76adfdb60b312c988e6e33551d8bf7ce47e403035a29296d2",
+      "prev": "c146734159b287994121280ebbf61a1d18a1ecd5fe7d31fa6f4df1d16c4c389d",
+      "data": { "slot": "FX-A/2", "step": "fc_program", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 9,
+      "kind": "result",
+      "at": "2026-10-27T07:48:02.536529+01:00",
+      "station": "ST-1",
+      "hash": "c4539dadeeddc8f887db64fe33e1be61ab4bb9ec3a31889fc0947b73c75496e5",
+      "prev": "046a28e972461ae76adfdb60b312c988e6e33551d8bf7ce47e403035a29296d2",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "fc_program",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 6.0,
+        "evidence": {
+          "bytes": 912,
+          "sha256": "5a9f7e62c6d8a85c15766a41443b27e2ff1cad3297b5eb8096422cd912c5897a",
+          "version": "1.15.0"
+        }
+      }
+    },
+    {
+      "seq": 10,
+      "kind": "intent",
+      "at": "2026-10-27T07:48:02.536529+01:00",
+      "station": "ST-1",
+      "hash": "70153aa4da22fabda1fb8b70d85d2b4e85612cfec2a938a414f7c3fa1189d81e",
+      "prev": "c4539dadeeddc8f887db64fe33e1be61ab4bb9ec3a31889fc0947b73c75496e5",
+      "data": { "slot": "FX-A/2", "step": "fc_config", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 11,
+      "kind": "result",
+      "at": "2026-10-27T07:48:05.536529+01:00",
+      "station": "ST-1",
+      "hash": "9b585932ea4db19f751c4777ea7a5ad175a4349456fbf2ef988a16d538014571",
+      "prev": "70153aa4da22fabda1fb8b70d85d2b4e85612cfec2a938a414f7c3fa1189d81e",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "fc_config",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 3.0,
+        "evidence": { "crc": "b660c393", "calibration": [48126, -47856, 2974, 12925, 47159, -112914] }
+      }
+    },
+    {
+      "seq": 12,
+      "kind": "intent",
+      "at": "2026-10-27T07:48:05.536529+01:00",
+      "station": "ST-1",
+      "hash": "d15784b29a9e25f43e38b9971017f31899cbd2f0460cdd6d95f15402259f4512",
+      "prev": "9b585932ea4db19f751c4777ea7a5ad175a4349456fbf2ef988a16d538014571",
+      "data": { "slot": "FX-A/2", "step": "fc_selftest", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 13,
+      "kind": "result",
+      "at": "2026-10-27T07:48:14.536529+01:00",
+      "station": "ST-1",
+      "hash": "8b6cc030cf81ceafa567d0210ba6a602b99c1e09a56749df256eac31779c4f45",
+      "prev": "d15784b29a9e25f43e38b9971017f31899cbd2f0460cdd6d95f15402259f4512",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "fc_selftest",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 9.0,
+        "evidence": {
+          "banner": {
+            "fw": "1.15.0",
+            "cfg": "b660c393",
+            "uid": "9134e12f4f46985d8edd9281",
+            "unit": "HX2-26-000159",
+            "board": "C"
+          },
+          "selftest": { "cal": "ok", "cfg": "ok", "img": "ok", "otp": "ok", "sensors": "ok" }
+        }
+      }
+    },
+    {
+      "seq": 14,
+      "kind": "intent",
+      "at": "2026-10-27T07:48:14.536529+01:00",
+      "station": "ST-1",
+      "hash": "940384add887ba12d1a5021dbf68b25af484fbdc451dccafa39a0d7527496078",
+      "prev": "8b6cc030cf81ceafa567d0210ba6a602b99c1e09a56749df256eac31779c4f45",
+      "data": { "slot": "FX-A/2", "step": "pmu_attach", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 15,
+      "kind": "result",
+      "at": "2026-10-27T07:48:18.536529+01:00",
+      "station": "ST-1",
+      "hash": "8b26cc4f3ce51fe2491911a264b3fd10b35a50913d0c94150b3038ec29d85445",
+      "prev": "940384add887ba12d1a5021dbf68b25af484fbdc451dccafa39a0d7527496078",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "pmu_attach",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 4.0,
+        "evidence": { "probe": "127.0.0.1:45661", "flash_packets": false }
+      }
+    },
+    {
+      "seq": 16,
+      "kind": "intent",
+      "at": "2026-10-27T07:48:18.536529+01:00",
+      "station": "ST-1",
+      "hash": "7144161a0f0191d87b57b30d26f398abd184299f09f798406ec99059094ddad0",
+      "prev": "8b26cc4f3ce51fe2491911a264b3fd10b35a50913d0c94150b3038ec29d85445",
+      "data": { "slot": "FX-A/2", "step": "pmu_identify", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 17,
+      "kind": "result",
+      "at": "2026-10-27T07:48:19.536529+01:00",
+      "station": "ST-1",
+      "hash": "92f46572011c3449e530bcf5e58d9b5df6804c271caad068ef6abe8cf22c91a5",
+      "prev": "7144161a0f0191d87b57b30d26f398abd184299f09f798406ec99059094ddad0",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "pmu_identify",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 1.0,
+        "evidence": { "lot": "P2610-02", "uid": "39f15fd948524743d380dd32", "board_rev": "A" }
+      }
+    },
+    {
+      "seq": 18,
+      "kind": "intent",
+      "at": "2026-10-27T07:48:19.536529+01:00",
+      "station": "ST-1",
+      "hash": "f37f059d1681c5a5ce2b5e1c411c55928b4c57bf7ec468d024845078ba84e7aa",
+      "prev": "92f46572011c3449e530bcf5e58d9b5df6804c271caad068ef6abe8cf22c91a5",
+      "data": { "slot": "FX-A/2", "step": "pmu_program", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 19,
+      "kind": "result",
+      "at": "2026-10-27T07:48:25.558990+01:00",
+      "station": "ST-1",
+      "hash": "2a198206bc2b404de65af70e644d72b8cde21d11ffed03a9a6f90a34d4a9852a",
+      "prev": "f37f059d1681c5a5ce2b5e1c411c55928b4c57bf7ec468d024845078ba84e7aa",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "pmu_program",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 6.0,
+        "evidence": {
+          "bytes": 920,
+          "sha256": "386a88ebb27def7204a33cc5c69b594feef81b25853443effdfb4fe9ff97005c",
+          "version": "2.3.1"
+        }
+      }
+    },
+    {
+      "seq": 20,
+      "kind": "intent",
+      "at": "2026-10-27T07:48:25.558990+01:00",
+      "station": "ST-1",
+      "hash": "20443d215972b40aae3408dd7a7c0d824674f62041695c26c6f167bfbfbbb7b0",
+      "prev": "2a198206bc2b404de65af70e644d72b8cde21d11ffed03a9a6f90a34d4a9852a",
+      "data": { "slot": "FX-A/2", "step": "pmu_config", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 21,
+      "kind": "result",
+      "at": "2026-10-27T07:48:28.558990+01:00",
+      "station": "ST-1",
+      "hash": "7acf0fc2716b33dc790d1709916ca81d2a43ecf1bfd0dc1b02ba7e305637aa85",
+      "prev": "20443d215972b40aae3408dd7a7c0d824674f62041695c26c6f167bfbfbbb7b0",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "pmu_config",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 3.0,
+        "evidence": { "crc": "eaaacc05", "calibration": [-102896, -6952, 67701, -59062, 90058, 6230] }
+      }
+    },
+    {
+      "seq": 22,
+      "kind": "intent",
+      "at": "2026-10-27T07:48:28.558990+01:00",
+      "station": "ST-1",
+      "hash": "beb12351000fff591c7648f368f633e70a3e7be729e938d12af181a5fcd15200",
+      "prev": "7acf0fc2716b33dc790d1709916ca81d2a43ecf1bfd0dc1b02ba7e305637aa85",
+      "data": { "slot": "FX-A/2", "step": "pmu_selftest", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 23,
+      "kind": "result",
+      "at": "2026-10-27T07:48:37.558990+01:00",
+      "station": "ST-1",
+      "hash": "dd2faeb7fdb0969b37c74ed5a6f7b1d6412c9f11d22c3a884bb11c78c53a072b",
+      "prev": "beb12351000fff591c7648f368f633e70a3e7be729e938d12af181a5fcd15200",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "pmu_selftest",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 9.0,
+        "evidence": {
+          "banner": {
+            "fw": "2.3.1",
+            "cfg": "eaaacc05",
+            "uid": "39f15fd948524743d380dd32",
+            "unit": "HX2-26-000159",
+            "board": "A"
+          },
+          "selftest": { "cal": "ok", "cfg": "ok", "img": "ok", "otp": "ok", "sensors": "ok" }
+        }
+      }
+    },
+    {
+      "seq": 24,
+      "kind": "intent",
+      "at": "2026-10-27T07:48:37.558990+01:00",
+      "station": "ST-1",
+      "hash": "6310851f9fc7603d39a3818b6a0d030e879a3d32bc8656e54b844d58b2d7e8f0",
+      "prev": "dd2faeb7fdb0969b37c74ed5a6f7b1d6412c9f11d22c3a884bb11c78c53a072b",
+      "data": { "slot": "FX-A/2", "step": "orin_enumerate", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 25,
+      "kind": "result",
+      "at": "2026-10-27T07:48:41.558990+01:00",
+      "station": "ST-1",
+      "hash": "fff197a9777b7ef8fa11653b5e78c9a8ea86902eb4a965bc2283fd09c7e1e0e2",
+      "prev": "6310851f9fc7603d39a3818b6a0d030e879a3d32bc8656e54b844d58b2d7e8f0",
+      "data": {
+        "ok": true,
+        "slot": "FX-A/2",
+        "step": "orin_enumerate",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 4.0,
+        "evidence": { "speed": "usb3", "usb_id": "0955:7423", "slow_link": false }
+      }
+    },
+    {
+      "seq": 26,
+      "kind": "intent",
+      "at": "2026-10-27T07:48:41.558990+01:00",
+      "station": "ST-1",
+      "hash": "050f0d2bda356e2cf41307425fc27932e59b53e3590ecbaa24cd24ed966a153d",
+      "prev": "fff197a9777b7ef8fa11653b5e78c9a8ea86902eb4a965bc2283fd09c7e1e0e2",
+      "data": { "slot": "FX-A/2", "step": "orin_identify", "attempt": 1, "fixture": "FX-A" }
+    },
+    {
+      "seq": 27,
+      "kind": "result",
+      "at": "2026-10-27T07:48:42.558990+01:00",
+      "station": "ST-1",
+      "hash": "86856a1b853041a07db9d80b4132b0b8a6b53569be4642b4bb8c4f156cca63cc",
+      "prev": "050f0d2bda356e2cf41307425fc27932e59b53e3590ecbaa24cd24ed966a153d",
+      "data": {
+        "ok": false,
+        "code": "eeprom_crc",
+        "slot": "FX-A/2",
+        "step": "orin_identify",
+        "detail": "the module EEPROM fails its CRC-8",
+        "attempt": 1,
+        "fixture": "FX-A",
+        "seconds": 1.0,
+        "evidence": {
+          "stored": 180,
+          "computed": 238,
+          "unverified": {
+            "fab": "300",
+            "sku": "0001",
+            "batch": "B26W41",
+            "serial": "14000494549856",
+            "board_id": 3767
+          }
+        }
+      }
+    },
+    {
+      "seq": 28,
+      "kind": "hold",
+      "at": "2026-10-27T07:51:12.558990+01:00",
+      "station": "ST-1",
+      "hash": "caebd3b13586c0a5fca1fa61c883c606a33f7e467c23328493011a52a43dd81c",
+      "prev": "86856a1b853041a07db9d80b4132b0b8a6b53569be4642b4bb8c4f156cca63cc",
+      "data": {
+        "code": "eeprom_crc",
+        "slot": "FX-A/2",
+        "step": "orin_identify",
+        "owner": "supplier",
+        "detail": "the module EEPROM fails its CRC-8",
+        "fixture": "FX-A",
+        "seconds": 150.0
+      }
+    }
+  ],
+  "chain": { "verified": true, "problems": [], "events": 28 }
+}

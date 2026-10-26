@@ -1,0 +1,37 @@
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: end center;
+  padding: var(--space-3);
+}
+
+@media (min-width: 48rem) {
+  .layer {
+    place-items: center;
+  }
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+}
+
+.panel {
+  position: relative;
+  display: grid;
+  gap: var(--space-4);
+  width: min(100%, 34rem);
+  max-height: calc(100dvh - var(--space-6));
+  overflow-y: auto;
+  padding: var(--space-5);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+  box-shadow: var(--lift);
+}
+
+.panel h2 {
+  font-size: var(--text-xl);
+}

@@ -1,0 +1,27 @@
+{
+  "document": "WI-SW-014",
+  "revision": 7,
+  "release": "R2026.10",
+  "findings": [
+    {
+      "kind": "obsolete_step",
+      "step": "pmu_calibrate",
+      "detail": "WI-SW-014 tells the operator to do pmu_calibrate; the recipe no longer has it"
+    },
+    {
+      "kind": "version_drift",
+      "step": "fc_program",
+      "detail": "WI-SW-014 says 1.14.2; R2026.10 installs 1.15.0"
+    },
+    {
+      "kind": "version_drift",
+      "step": "orin_flash",
+      "detail": "WI-SW-014 says 3.1.4; R2026.10 installs 3.2.0"
+    },
+    {
+      "kind": "missing_warning",
+      "step": "orin_fuse",
+      "detail": "orin_fuse cannot be undone; WI-SW-014 does not say so"
+    }
+  ]
+}

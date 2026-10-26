@@ -1,0 +1,66 @@
+{
+  "signature": "cc3ad36d3243979e61b2e5257053f3b6a6f79b42b5e161caf64828f139af11b35801f809988c28c99e70316b31e881dcb6189f15afde610273d6e4ed03ea1e03",
+  "certificate": {
+    "slot": "FX-A/1",
+    "unit": "HX2-26-000154",
+    "fuses": { "secure_boot": 1, "odm_production_mode": 1 },
+    "boards": {
+      "fc": { "lot": "L2609-114", "uid": "5c16cd72e2a78d30034e077c", "board_rev": "C" },
+      "pmu": { "lot": "P2608-33", "uid": "f4875dddf1d1eaf57c839008", "board_rev": "A" }
+    },
+    "module": {
+      "fab": "300",
+      "sku": "0000",
+      "batch": "B26W38",
+      "serial": "14680476754803",
+      "board_id": 3767
+    },
+    "product": "HX-2 VTOL",
+    "release": "R2026.10",
+    "station": "ST-1",
+    "operator": "OP-12",
+    "installed": {
+      "fc": {
+        "sha256": "5a9f7e62c6d8a85c15766a41443b27e2ff1cad3297b5eb8096422cd912c5897a",
+        "version": "1.15.0"
+      },
+      "pmu": {
+        "sha256": "386a88ebb27def7204a33cc5c69b594feef81b25853443effdfb4fe9ff97005c",
+        "version": "2.3.1"
+      },
+      "orin": {
+        "version": "3.2.0",
+        "partitions": {
+          "APP": "59642ca9594236198fdb04bb12215dcf134508a3d465b161525974f972d2b098",
+          "esp": "43b3fc4c7bbfde2224f61b5f3dab6b954bba51b2f9748e62d26a589027ddfd3a",
+          "kernel": "36aa9da6063b555b511c4dde6daab65504b9fee5c8a32727db525a45feabe2fd",
+          "QSPI_BOOT": "0241570863a1ffb6490b294d251bd67de9129a81ed8e61373d7eaa7b40e029c8",
+          "kernel-dtb": "4775fa78d6e4e64229df0781f746e4353f1e0a36370386086025bc390d6d0a48"
+        }
+      },
+      "fc_config": {
+        "crc": "28e949ab",
+        "sha256": "3f12da002827d97017ced68d36f8ddd33034a4e8b677e8429078758c702dca16"
+      },
+      "orin_boot": {
+        "l4t": "36.4.3",
+        "services": {
+          "uav-link.service": "active",
+          "uav-telemetry.service": "active",
+          "payload-bridge.service": "active"
+        },
+        "machine_id": "5ddbb71559182934d4015d99dbb7451e",
+        "image_version": "3.2.0",
+        "device_key_sha256": "356cfa5773736ff1fac0d026003d4e4252cf6ca94b6f09c872bd202e3ea3c023"
+      },
+      "pmu_config": {
+        "crc": "3e919a79",
+        "sha256": "f4a606007810e5c0bb784dc3232d66a33a6eb82a0ce1b83c6ccd4cc60597992f"
+      }
+    },
+    "trail_head": "1ec39225ae664c13425ea893cc5746888b5b55ad5b6d9f849d9f46fd4531a871",
+    "released_at": "2026-10-27T07:59:09.536529+01:00",
+    "release_sha256": "e4a51cf4a71ab4fd6c06084e8e54aa1e42dab712530daa156f92d6f1d4166897"
+  },
+  "station_key": "ad9d483f318eb1860dbde6faeaadfa5e4930cc0d5cb9dda54804152f178ae60d"
+}

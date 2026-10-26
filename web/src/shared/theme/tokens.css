@@ -1,0 +1,165 @@
+/*
+ * Design tokens for the line console. Components carry no colours, sizes or durations of their own.
+ *
+ * One family, Archivo, used across its width axis: normal width for reading, expanded and heavy for the few
+ * headings and the figures a lead reads from across the room. Colour is reserved for state: pass, hold, warn, a
+ * leading signal (watch), and international orange for the two things nobody should miss: an issue that is
+ * systemic, and a step that cannot be undone.
+ */
+:root {
+  color-scheme: light;
+
+  --paper: #eceff1;
+  --surface: #fbfcfc;
+  --surface-sunk: #e2e7ea;
+  --ink: #101418;
+  --ink-soft: #46525d;
+  --ink-faint: #6b7781;
+  --rule: #cfd6dc;
+  --rule-strong: #9eaab4;
+
+  --accent: #1450b8;
+  --accent-ink: #ffffff;
+  --accent-wash: #dfe8f8;
+
+  --pass: #157347;
+  --pass-wash: #dcefe4;
+  --warn: #8f5400;
+  --warn-fill: #f2b233;
+  --warn-wash: #f8ecd2;
+  --block: #c0261b;
+  --block-wash: #f8e0dd;
+  --watch: #0f6e73;
+  --watch-wash: #d9eeee;
+  --orange: #ff4f00;
+  --orange-ink: #b33800;
+  --orange-wash: #ffe6da;
+
+  --focus: #1450b8;
+  --scrim: rgb(16 20 24 / 0.5);
+
+  --font-ui: "Archivo Variable", "Archivo", system-ui, sans-serif;
+  --width-normal: 100;
+  --width-wide: 118;
+  --width-expanded: 125;
+
+  /* type scale, ratio 1.25 from 15px */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-md: 0.9375rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+  --text-3xl: 2.375rem;
+  --text-4xl: 3rem;
+
+  --leading-tight: 1.08;
+  --leading-body: 1.5;
+
+  --weight-body: 400;
+  --weight-strong: 600;
+  --weight-heading: 750;
+  --weight-figure: 800;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  --gutter: 1rem;
+  --measure: 70ch;
+  --content-max: 90rem;
+  --control-height: 2.375rem;
+
+  --radius-control: 3px;
+  --radius-panel: 6px;
+  --radius-plate: 10px;
+  --radius-pill: 999px;
+
+  --border: 1px solid var(--rule);
+  --border-strong: 1px solid var(--rule-strong);
+  --lift: 0 1px 2px rgb(16 20 24 / 0.06), 0 12px 32px -20px rgb(16 20 24 / 0.35);
+
+  /* the fixture board */
+  --segment-height: 0.375rem;
+  --segment-gap: 2px;
+  --socket-min: 11.5rem;
+  --dot: 0.5625rem;
+  --ring: 2px;
+
+  --duration-quick: 140ms;
+  --duration-move: 360ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --gutter: 2rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #0c0f12;
+    --surface: #151a1f;
+    --surface-sunk: #10141a;
+    --ink: #e8edf1;
+    --ink-soft: #aab6c0;
+    --ink-faint: #85929d;
+    --rule: #26303a;
+    --rule-strong: #3c4854;
+    --accent: #7ea6ff;
+    --accent-ink: #0c0f12;
+    --accent-wash: #1a2a4a;
+    --pass: #4cc38a;
+    --pass-wash: #10291d;
+    --warn: #f2b233;
+    --warn-fill: #d99b22;
+    --warn-wash: #33260c;
+    --block: #ff7a6b;
+    --block-wash: #3a1713;
+    --watch: #5cc8cd;
+    --watch-wash: #0f2a2c;
+    --orange: #ff6a26;
+    --orange-ink: #ff9a6b;
+    --orange-wash: #3a1d10;
+    --focus: #7ea6ff;
+    --scrim: rgb(0 0 0 / 0.6);
+    --lift: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -20px rgb(0 0 0 / 0.9);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0c0f12;
+  --surface: #151a1f;
+  --surface-sunk: #10141a;
+  --ink: #e8edf1;
+  --ink-soft: #aab6c0;
+  --ink-faint: #85929d;
+  --rule: #26303a;
+  --rule-strong: #3c4854;
+  --accent: #7ea6ff;
+  --accent-ink: #0c0f12;
+  --accent-wash: #1a2a4a;
+  --pass: #4cc38a;
+  --pass-wash: #10291d;
+  --warn: #f2b233;
+  --warn-fill: #d99b22;
+  --warn-wash: #33260c;
+  --block: #ff7a6b;
+  --block-wash: #3a1713;
+  --watch: #5cc8cd;
+  --watch-wash: #0f2a2c;
+  --orange: #ff6a26;
+  --orange-ink: #ff9a6b;
+  --orange-wash: #3a1d10;
+  --focus: #7ea6ff;
+  --scrim: rgb(0 0 0 / 0.6);
+  --lift: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -20px rgb(0 0 0 / 0.9);
+}

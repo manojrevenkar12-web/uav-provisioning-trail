@@ -1,0 +1,479 @@
+[
+  {
+    "slot": "FX-A/1",
+    "station": "ST-1",
+    "fixture": "FX-A",
+    "index": 1,
+    "current": {
+      "slot": "FX-A/1",
+      "unit": "HX2-26-000154",
+      "status": "released",
+      "step": null,
+      "hold_code": null,
+      "hold_owner": null,
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:59:14.536529+01:00"
+    },
+    "stats": {
+      "slot": "FX-A/1",
+      "fixture": "FX-A",
+      "units": 17,
+      "held": 8,
+      "first_pass_yield": "0.4118",
+      "lost_minutes": "24.0",
+      "top_code": "board_rev_unsupported",
+      "top_code_failures": 4
+    },
+    "recent": [
+      { "unit": "HX2-26-000060", "status": "held", "hold_code": "board_rev_unsupported" },
+      { "unit": "HX2-26-000067", "status": "held", "hold_code": "board_rev_unsupported" },
+      { "unit": "HX2-26-000073", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000084", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000098", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000105", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000117", "status": "held", "hold_code": "selftest_fail" },
+      { "unit": "HX2-26-000125", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000136", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000149", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000157", "status": "held", "hold_code": "selftest_fail" },
+      { "unit": "HX2-26-000154", "status": "released", "hold_code": null }
+    ]
+  },
+  {
+    "slot": "FX-A/2",
+    "station": "ST-1",
+    "fixture": "FX-A",
+    "index": 2,
+    "current": {
+      "slot": "FX-A/2",
+      "unit": "HX2-26-000159",
+      "status": "held",
+      "step": "orin_identify",
+      "hold_code": "eeprom_crc",
+      "hold_owner": "supplier",
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:51:12.558990+01:00"
+    },
+    "stats": {
+      "slot": "FX-A/2",
+      "fixture": "FX-A",
+      "units": 14,
+      "held": 4,
+      "first_pass_yield": "0.6429",
+      "lost_minutes": "11.3",
+      "top_code": "eeprom_crc",
+      "top_code_failures": 2
+    },
+    "recent": [
+      { "unit": "HX2-26-000028", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000041", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000055", "status": "held", "hold_code": "board_rev_unsupported" },
+      { "unit": "HX2-26-000061", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000074", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000085", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000099", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000111", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000122", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000133", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000145", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000159", "status": "held", "hold_code": "eeprom_crc" }
+    ]
+  },
+  {
+    "slot": "FX-A/3",
+    "station": "ST-1",
+    "fixture": "FX-A",
+    "index": 3,
+    "current": {
+      "slot": "FX-A/3",
+      "unit": "HX2-26-000140",
+      "status": "released",
+      "step": null,
+      "hold_code": null,
+      "hold_owner": null,
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:44:19.536724+01:00"
+    },
+    "stats": {
+      "slot": "FX-A/3",
+      "fixture": "FX-A",
+      "units": 12,
+      "held": 3,
+      "first_pass_yield": "0.2500",
+      "lost_minutes": "16.7",
+      "top_code": "link_refused",
+      "top_code_failures": 11
+    },
+    "recent": [
+      { "unit": "HX2-26-000003", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000024", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000036", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000051", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000059", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000078", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000090", "status": "held", "hold_code": "selftest_fail" },
+      { "unit": "HX2-26-000097", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000104", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000115", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000128", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000140", "status": "released", "hold_code": null }
+    ]
+  },
+  {
+    "slot": "FX-A/4",
+    "station": "ST-1",
+    "fixture": "FX-A",
+    "index": 4,
+    "current": {
+      "slot": "FX-A/4",
+      "unit": "HX2-26-000152",
+      "status": "released",
+      "step": null,
+      "hold_code": null,
+      "hold_owner": null,
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:51:12.626178+01:00"
+    },
+    "stats": {
+      "slot": "FX-A/4",
+      "fixture": "FX-A",
+      "units": 14,
+      "held": 4,
+      "first_pass_yield": "0.6429",
+      "lost_minutes": "10.4",
+      "top_code": "eeprom_crc",
+      "top_code_failures": 3
+    },
+    "recent": [
+      { "unit": "HX2-26-000025", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000037", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000049", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000057", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000072", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000083", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000096", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000110", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000124", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000135", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000148", "status": "held", "hold_code": "selftest_fail" },
+      { "unit": "HX2-26-000152", "status": "released", "hold_code": null }
+    ]
+  },
+  {
+    "slot": "FX-B/1",
+    "station": "ST-1",
+    "fixture": "FX-B",
+    "index": 1,
+    "current": {
+      "slot": "FX-B/1",
+      "unit": "HX2-26-000160",
+      "status": "released",
+      "step": null,
+      "hold_code": null,
+      "hold_owner": null,
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:56:09.603912+01:00"
+    },
+    "stats": {
+      "slot": "FX-B/1",
+      "fixture": "FX-B",
+      "units": 13,
+      "held": 1,
+      "first_pass_yield": "0.6923",
+      "lost_minutes": "3.8",
+      "top_code": "verify_mismatch",
+      "top_code_failures": 1
+    },
+    "recent": [
+      { "unit": "HX2-26-000018", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000030", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000044", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000062", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000075", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000087", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000101", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000114", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000127", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000138", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000147", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000160", "status": "released", "hold_code": null }
+    ]
+  },
+  {
+    "slot": "FX-B/2",
+    "station": "ST-1",
+    "fixture": "FX-B",
+    "index": 2,
+    "current": {
+      "slot": "FX-B/2",
+      "unit": "HX2-26-000158",
+      "status": "released",
+      "step": null,
+      "hold_code": null,
+      "hold_owner": null,
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:54:59.603912+01:00"
+    },
+    "stats": {
+      "slot": "FX-B/2",
+      "fixture": "FX-B",
+      "units": 14,
+      "held": 3,
+      "first_pass_yield": "0.6429",
+      "lost_minutes": "8.1",
+      "top_code": "link_dropped",
+      "top_code_failures": 2
+    },
+    "recent": [
+      { "unit": "HX2-26-000027", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000039", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000048", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000065", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000077", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000089", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000102", "status": "held", "hold_code": "selftest_fail" },
+      { "unit": "HX2-26-000107", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000119", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000130", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000144", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000158", "status": "released", "hold_code": null }
+    ]
+  },
+  {
+    "slot": "FX-B/3",
+    "station": "ST-1",
+    "fixture": "FX-B",
+    "index": 3,
+    "current": {
+      "slot": "FX-B/3",
+      "unit": "HX2-26-000151",
+      "status": "released",
+      "step": null,
+      "hold_code": null,
+      "hold_owner": null,
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:51:17.581646+01:00"
+    },
+    "stats": {
+      "slot": "FX-B/3",
+      "fixture": "FX-B",
+      "units": 14,
+      "held": 4,
+      "first_pass_yield": "0.5000",
+      "lost_minutes": "11.7",
+      "top_code": "link_dropped",
+      "top_code_failures": 3
+    },
+    "recent": [
+      { "unit": "HX2-26-000031", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000045", "status": "held", "hold_code": "board_rev_unsupported" },
+      { "unit": "HX2-26-000053", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000068", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000080", "status": "held", "hold_code": "board_rev_unsupported" },
+      { "unit": "HX2-26-000086", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000100", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000113", "status": "held", "hold_code": "selftest_fail" },
+      { "unit": "HX2-26-000121", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000132", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000143", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000151", "status": "released", "hold_code": null }
+    ]
+  },
+  {
+    "slot": "FX-B/4",
+    "station": "ST-1",
+    "fixture": "FX-B",
+    "index": 4,
+    "current": {
+      "slot": "FX-B/4",
+      "unit": "HX2-26-000150",
+      "status": "released",
+      "step": null,
+      "hold_code": null,
+      "hold_owner": null,
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:50:25.559185+01:00"
+    },
+    "stats": {
+      "slot": "FX-B/4",
+      "fixture": "FX-B",
+      "units": 13,
+      "held": 2,
+      "first_pass_yield": "0.6923",
+      "lost_minutes": "5.5",
+      "top_code": "link_dropped",
+      "top_code_failures": 2
+    },
+    "recent": [
+      { "unit": "HX2-26-000014", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000029", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000042", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000056", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000070", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000081", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000091", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000103", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000112", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000126", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000137", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000150", "status": "released", "hold_code": null }
+    ]
+  },
+  {
+    "slot": "FX-C/1",
+    "station": "ST-2",
+    "fixture": "FX-C",
+    "index": 1,
+    "current": {
+      "slot": "FX-C/1",
+      "unit": "HX2-26-000155",
+      "status": "released",
+      "step": null,
+      "hold_code": null,
+      "hold_owner": null,
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:53:53.536724+01:00"
+    },
+    "stats": {
+      "slot": "FX-C/1",
+      "fixture": "FX-C",
+      "units": 14,
+      "held": 3,
+      "first_pass_yield": "0.7857",
+      "lost_minutes": "7.6",
+      "top_code": "eeprom_crc",
+      "top_code_failures": 1
+    },
+    "recent": [
+      { "unit": "HX2-26-000023", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000034", "status": "held", "hold_code": "uid_already_registered" },
+      { "unit": "HX2-26-000040", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000054", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000069", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000079", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000093", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000106", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000118", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000129", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000141", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000155", "status": "released", "hold_code": null }
+    ]
+  },
+  {
+    "slot": "FX-C/2",
+    "station": "ST-2",
+    "fixture": "FX-C",
+    "index": 2,
+    "current": {
+      "slot": "FX-C/2",
+      "unit": "HX2-26-000139",
+      "status": "released",
+      "step": null,
+      "hold_code": null,
+      "hold_owner": null,
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:50:11.857816+01:00"
+    },
+    "stats": {
+      "slot": "FX-C/2",
+      "fixture": "FX-C",
+      "units": 9,
+      "held": 4,
+      "first_pass_yield": "0.3333",
+      "lost_minutes": "13.9",
+      "top_code": "eeprom_crc",
+      "top_code_failures": 3
+    },
+    "recent": [
+      { "unit": "HX2-26-000010", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000035", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000043", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000050", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000058", "status": "held", "hold_code": "board_rev_unsupported" },
+      { "unit": "HX2-26-000066", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000092", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000116", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000139", "status": "released", "hold_code": null }
+    ]
+  },
+  {
+    "slot": "FX-C/3",
+    "station": "ST-2",
+    "fixture": "FX-C",
+    "index": 3,
+    "current": {
+      "slot": "FX-C/3",
+      "unit": "HX2-26-000156",
+      "status": "released",
+      "step": null,
+      "hold_code": null,
+      "hold_owner": null,
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:54:35.581451+01:00"
+    },
+    "stats": {
+      "slot": "FX-C/3",
+      "fixture": "FX-C",
+      "units": 13,
+      "held": 1,
+      "first_pass_yield": "0.9231",
+      "lost_minutes": "2.5",
+      "top_code": "eeprom_crc",
+      "top_code_failures": 1
+    },
+    "recent": [
+      { "unit": "HX2-26-000021", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000032", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000046", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000063", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000076", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000088", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000094", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000108", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000120", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000131", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000142", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000156", "status": "released", "hold_code": null }
+    ]
+  },
+  {
+    "slot": "FX-C/4",
+    "station": "ST-2",
+    "fixture": "FX-C",
+    "index": 4,
+    "current": {
+      "slot": "FX-C/4",
+      "unit": "HX2-26-000153",
+      "status": "released",
+      "step": null,
+      "hold_code": null,
+      "hold_owner": null,
+      "release": "R2026.10",
+      "updated_at": "2026-10-27T07:51:15.581451+01:00"
+    },
+    "stats": {
+      "slot": "FX-C/4",
+      "fixture": "FX-C",
+      "units": 13,
+      "held": 2,
+      "first_pass_yield": "0.7692",
+      "lost_minutes": "5.9",
+      "top_code": "eeprom_crc",
+      "top_code_failures": 2
+    },
+    "recent": [
+      { "unit": "HX2-26-000022", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000033", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000047", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000064", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000071", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000082", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000095", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000109", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000123", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000134", "status": "released", "hold_code": null },
+      { "unit": "HX2-26-000146", "status": "held", "hold_code": "eeprom_crc" },
+      { "unit": "HX2-26-000153", "status": "released", "hold_code": null }
+    ]
+  }
+]

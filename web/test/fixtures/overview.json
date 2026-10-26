@@ -1,0 +1,170 @@
+{
+  "kpis": {
+    "units": {
+      "started": 160,
+      "released": 121,
+      "held": 39,
+      "in_progress": 0,
+      "first_pass": 98,
+      "finished": 160,
+      "reworked": 1
+    },
+    "first_pass_yield": { "value": 0.6125, "of": 160, "count": 98 },
+    "final_yield": { "value": 0.7562, "of": 160, "count": 121 },
+    "flash_success": { "value": 0.9859, "of": 425, "count": 419 },
+    "flash_first_attempt": { "value": 0.9854, "of": 410, "count": 404 },
+    "downtime_minutes": 121.3,
+    "cycle_minutes_median": 7.6,
+    "window": { "from": "2026-10-27T06:01:38+01:00", "to": "2026-10-27T07:59:14.536529+01:00" }
+  },
+  "systemic": [
+    {
+      "key": "7c9d76e4a31c",
+      "code": "link_refused",
+      "label": "Probe cannot attach",
+      "owner": "production",
+      "kind": "systemic",
+      "where": [{ "dimension": "slot", "value": "FX-A/3" }],
+      "failures": 11,
+      "attempts": 37,
+      "rate": 0.2973,
+      "rest_rate": 0.0203,
+      "p_value": 5.6199275832094195e-8,
+      "units": 7,
+      "first_seen": "2026-10-27 06:20:22.111915+01:00",
+      "last_seen": "2026-10-27 07:47:39.536724+01:00",
+      "lost_minutes": 8.2,
+      "action": "Take the slot out of service and inspect the fixture: pogo block, probe cable, USB cable, power.",
+      "examples": ["HX2-26-000036", "HX2-26-000051", "HX2-26-000059", "HX2-26-000090", "HX2-26-000115"]
+    },
+    {
+      "key": "c0f8e9019b13",
+      "code": "usb_enumeration_failed",
+      "label": "Module does not enumerate in recovery mode",
+      "owner": "production",
+      "kind": "systemic",
+      "where": [{ "dimension": "slot", "value": "FX-C/2" }],
+      "failures": 3,
+      "attempts": 11,
+      "rate": 0.2727,
+      "rest_rate": 0.0,
+      "p_value": 0.00033856988082342726,
+      "units": 3,
+      "first_seen": "2026-10-27 06:02:34.044727+01:00",
+      "last_seen": "2026-10-27 06:59:26.268362+01:00",
+      "lost_minutes": 3.0,
+      "action": "Take the slot out of service and inspect the fixture: pogo block, probe cable, USB cable, power.",
+      "examples": ["HX2-26-000010", "HX2-26-000050", "HX2-26-000092"]
+    },
+    {
+      "key": "f5294d977f79",
+      "code": "link_dropped",
+      "label": "Probe link dropped mid-transfer",
+      "owner": "production",
+      "kind": "systemic",
+      "where": [{ "dimension": "operator", "value": "OP-12" }],
+      "failures": 11,
+      "attempts": 160,
+      "rate": 0.0688,
+      "rest_rate": 0.0,
+      "p_value": 8.28061943436915e-6,
+      "units": 11,
+      "first_seen": "2026-10-27 06:02:15.044727+01:00",
+      "last_seen": "2026-10-27 07:44:00.559185+01:00",
+      "lost_minutes": 2.5,
+      "action": "Review the step with the operator at the station; check whether the work instruction is clear.",
+      "examples": ["HX2-26-000003", "HX2-26-000014", "HX2-26-000068", "HX2-26-000087", "HX2-26-000089"]
+    },
+    {
+      "key": "aac73e363c99",
+      "code": "selftest_fail",
+      "label": "Self-test failed",
+      "owner": "engineering",
+      "kind": "systemic",
+      "where": [{ "dimension": "fc_rev", "value": "D" }],
+      "failures": 6,
+      "attempts": 6,
+      "rate": 1.0,
+      "rest_rate": 0.007,
+      "p_value": 5.314129074167112e-10,
+      "units": 6,
+      "first_seen": "2026-10-27 06:58:19.313089+01:00",
+      "last_seen": "2026-10-27 07:47:36.491802+01:00",
+      "lost_minutes": 0.9,
+      "action": "Engineering: the release does not handle this board revision.",
+      "examples": ["HX2-26-000090", "HX2-26-000102", "HX2-26-000113", "HX2-26-000117", "HX2-26-000148"]
+    },
+    {
+      "key": "760432489882",
+      "code": "eeprom_crc",
+      "label": "Module EEPROM fails its CRC",
+      "owner": "supplier",
+      "kind": "systemic",
+      "where": [{ "dimension": "orin_batch", "value": "B26W41" }],
+      "failures": 20,
+      "attempts": 63,
+      "rate": 0.3175,
+      "rest_rate": 0.0,
+      "p_value": 1.3993951637763666e-8,
+      "units": 20,
+      "first_seen": "2026-10-27 06:02:29.044727+01:00",
+      "last_seen": "2026-10-27 07:48:42.558990+01:00",
+      "lost_minutes": 0.3,
+      "action": "Quality: quarantine the module batch and open a supplier complaint.",
+      "examples": ["HX2-26-000004", "HX2-26-000015", "HX2-26-000016", "HX2-26-000035", "HX2-26-000039"]
+    },
+    {
+      "key": "81d9e2bed997",
+      "code": "board_rev_unsupported",
+      "label": "Board revision not in the release",
+      "owner": "engineering",
+      "kind": "systemic",
+      "where": [
+        { "dimension": "fc_rev", "value": "D" },
+        { "dimension": "release", "value": "R2026.09" }
+      ],
+      "failures": 11,
+      "attempts": 18,
+      "rate": 0.6111,
+      "rest_rate": 0.0,
+      "p_value": 8.310739973585609e-13,
+      "units": 11,
+      "first_seen": "2026-10-27 06:01:43+01:00",
+      "last_seen": "2026-10-27 06:52:00.246096+01:00",
+      "lost_minutes": 0.2,
+      "action": "Engineering: the release does not handle this board revision.",
+      "examples": ["HX2-26-000001", "HX2-26-000008", "HX2-26-000009", "HX2-26-000019", "HX2-26-000045"]
+    }
+  ],
+  "one_off": 12,
+  "watch": [
+    {
+      "slot": "FX-C/2",
+      "signal": "slow_link",
+      "share": 1.0,
+      "units": 8,
+      "interval": [0.676, 1.0],
+      "why": "modules on this slot enumerate at USB2: flashes take about three times as long and the link is marginal"
+    }
+  ],
+  "hours": [
+    {
+      "hour": "2026-10-27T06:00:00+01:00",
+      "released": 57,
+      "failures": 43,
+      "flashes": 224,
+      "flashes_ok": 223
+    },
+    { "hour": "2026-10-27T07:00:00+01:00", "released": 64, "failures": 31, "flashes": 201, "flashes_ok": 196 }
+  ],
+  "pareto": [
+    { "code": "eeprom_crc", "failures": 20, "units": 20, "lost_minutes": "0.3" },
+    { "code": "link_refused", "failures": 17, "units": 13, "lost_minutes": "1.1" },
+    { "code": "board_rev_unsupported", "failures": 11, "units": 11, "lost_minutes": "0.2" },
+    { "code": "link_dropped", "failures": 11, "units": 11, "lost_minutes": "0.7" },
+    { "code": "selftest_fail", "failures": 7, "units": 7, "lost_minutes": "1.1" },
+    { "code": "verify_mismatch", "failures": 4, "units": 4, "lost_minutes": "0.4" },
+    { "code": "usb_enumeration_failed", "failures": 3, "units": 3, "lost_minutes": "0.5" },
+    { "code": "uid_already_registered", "failures": 1, "units": 1, "lost_minutes": "0.0" }
+  ]
+}
