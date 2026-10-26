@@ -1,0 +1,21 @@
+# A short shift with strong faults, for the pipeline tests.
+campaign: small
+seed: 5
+start: "2026-10-27T14:00:00+01:00"
+units: 72
+operators: {ST-1: [OP-07, OP-12], ST-2: [OP-03]}
+releases:
+  - {release: R2026.09, from_unit: 1}
+  - {release: R2026.10, from_unit: 37}
+mix:
+  fc_rev: {B: 0.4, C: 0.6}
+  pmu_rev: {A: 0.5, B: 0.5}
+  orin_sku: {"0000": 0.5, "0001": 0.5}
+  fc_lot: {L2609-114: 0.5, L2610-021: 0.5}
+  pmu_lot: {P2608-33: 0.5, P2610-02: 0.5}
+  orin_batch: {B26W38: 0.5, B26W41: 0.5}
+faults:
+  - {id: pogo, kind: fixture_contact, slot: FX-B/1, target: pmu, p: 0.8}
+  - {id: lot, kind: supplier_otp_blank, target: fc, lot: L2610-021, p: 0.35}
+  - {id: service, kind: service_on_sku, version: 3.2.0, service: payload-bridge.service, sku: "0001"}
+  - {id: noise, kind: random_link, p: 0.02}

@@ -1,0 +1,23 @@
+# The software steps every airframe goes through on the line, in order. Each step id is also the id of a step in
+# the work instruction the operator follows (config/instructions); `uavtrail instructions check` compares them.
+recipe: standard
+version: 3
+steps:
+  - {id: scan_unit, kind: scan}
+  - {id: fc_attach, kind: mcu_attach, target: fc}
+  - {id: fc_identify, kind: mcu_identify, target: fc}
+  - {id: fc_program, kind: mcu_program, target: fc}
+  - {id: fc_config, kind: mcu_config, target: fc}
+  - {id: fc_selftest, kind: mcu_boot, target: fc}
+  - {id: pmu_attach, kind: mcu_attach, target: pmu}
+  - {id: pmu_identify, kind: mcu_identify, target: pmu}
+  - {id: pmu_program, kind: mcu_program, target: pmu}
+  - {id: pmu_config, kind: mcu_config, target: pmu}
+  - {id: pmu_selftest, kind: mcu_boot, target: pmu}
+  - {id: orin_enumerate, kind: orin_enumerate, target: orin}
+  - {id: orin_identify, kind: orin_identify, target: orin}
+  - {id: orin_flash, kind: orin_flash, target: orin}
+  - {id: orin_verify, kind: orin_verify, target: orin}
+  - {id: orin_first_boot, kind: orin_first_boot, target: orin}
+  - {id: orin_fuse, kind: orin_fuse, target: orin, irreversible: true}
+  - {id: release_unit, kind: release_unit}

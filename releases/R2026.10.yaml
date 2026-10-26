@@ -1,0 +1,13 @@
+release: R2026.10
+product: HX-2 VTOL
+recipe: standard
+instruction: WI-SW-014
+artifacts:
+  fc: {version: 1.15.0}
+  pmu: {version: 2.3.1}
+  orin: {version: 3.2.0, l4t: 36.4.3, services: [uav-link.service, uav-telemetry.service, payload-bridge.service]}
+compatible:
+  fc: [B, C, D]
+  pmu: [A, B]
+  orin: {board_id: 3767, sku: ["0000", "0001"], fab: ["300", "301"]}
+fuses: {secure_boot: 1, odm_production_mode: 1}

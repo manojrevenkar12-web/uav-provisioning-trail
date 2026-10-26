@@ -1,0 +1,21 @@
+# The line: stations, fixtures and slots, and how long things take where the line is emulated (a real station
+# measures them). Durations in seconds.
+stations:
+  ST-1: {fixtures: {FX-A: 4, FX-B: 4}, mode: production}
+  ST-2: {fixtures: {FX-C: 4}, mode: production}
+durations:
+  scan: 8
+  mcu_attach: 4
+  mcu_identify: 1
+  mcu_program_base: 6
+  mcu_program_kb_per_s: 40
+  mcu_config: 3
+  mcu_boot: 9
+  release_unit: 5
+  hold: 150              # operator takes the unit off the fixture and tags it
+  load_unit: 90          # the next airframe onto the slot: cables, pogo block, power
+recover:                 # what the operator does before a retry
+  reseat: 45
+  reattach: 10
+  re_enter_recovery: 50
+  wait: 30

@@ -1,0 +1,29 @@
+# One early shift on the emulated line. The faults below are the truth the analysis has to find; the station and
+# the server never read this file (tests/test_isolation.py).
+campaign: shift-a
+seed: 11
+start: "2026-10-27T06:00:00+01:00"
+units: 160
+operators: {ST-1: [OP-07, OP-12], ST-2: [OP-03, OP-21]}
+releases:
+  - {release: R2026.09, from_unit: 1}
+  - {release: R2026.10, from_unit: 81}
+mix:
+  fc_rev: {B: 0.3, C: 0.6, D: 0.1}
+  pmu_rev: {A: 0.5, B: 0.5}
+  orin_sku: {"0000": 0.7, "0001": 0.3}
+  fc_lot: {L2609-114: 0.5, L2610-021: 0.5}
+  pmu_lot: {P2608-33: 0.6, P2610-02: 0.4}
+  orin_batch: {B26W38: 0.5, B26W41: 0.5}
+faults:
+  # systemic: each has one place the analysis should point at
+  - {id: pogo-fxa3, kind: fixture_contact, slot: FX-A/3, target: fc, p: 0.5, from_unit: 25}
+  - {id: cable-fxc2, kind: usb_cable, slot: FX-C/2, enumerate_fail_p: 0.45, usb2: true}
+  - {id: eeprom-b26w41, kind: supplier_eeprom_crc, orin_batch: B26W41, p: 0.3}
+  - {id: fc115-rev-d, kind: firmware_board_gap, target: fc, version: 1.15.0, missing_rev: D}
+  - {id: op12-handling, kind: operator_handling, operator: OP-12, target: pmu, p: 0.3}
+  # one-off: random, nowhere in particular
+  - {id: noise-link, kind: random_link, p: 0.03}
+  - {id: noise-nvme, kind: nvme_defect, p: 0.012}
+  - {id: noise-cal, kind: calibration_outlier, target: fc, p: 0.012}
+  - {id: noise-swap, kind: board_swap, p: 0.008}

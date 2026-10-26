@@ -1,0 +1,27 @@
+# Work instruction WI-SW-014 as exported from the digital work instruction tool the operators follow on the
+# station screen. `uavtrail instructions check` compares it with the recipe and the release a station runs: an
+# instruction that says something the station no longer does is how wrong documentation reaches the floor.
+document: WI-SW-014
+title: Software provisioning, HX-2 VTOL
+revision: 7
+released: "2026-09-14"
+steps:
+  - {id: scan_unit, text: "Scan the airframe label with the hand scanner. The station shows the unit serial."}
+  - {id: fc_attach, text: "Seat the flight controller on the pogo block of the slot and close the clamp."}
+  - {id: fc_identify, text: "The station reads the board identity. Revisions B and C are accepted."}
+  - {id: fc_program, text: "The station flashes flight controller firmware 1.14.2 and reads it back. Do not open the clamp while it runs.", versions: {fc: 1.14.2}}
+  - {id: fc_config, text: "The station writes the unit serial and the calibration from the calibration station."}
+  - {id: fc_selftest, text: "The flight controller boots and runs its self-test. Green: continue. Red: call the line lead."}
+  - {id: pmu_attach, text: "Connect the power module harness to the slot."}
+  - {id: pmu_identify, text: "The station reads the power module identity."}
+  - {id: pmu_program, text: "The station flashes power module firmware 2.3.1 and reads it back.", versions: {pmu: 2.3.1}}
+  - {id: pmu_calibrate, text: "Run the current-sense calibration on the power module (two minutes)."}
+  - {id: pmu_config, text: "The station writes the power module configuration."}
+  - {id: pmu_selftest, text: "The power module boots and runs its self-test."}
+  - {id: orin_enumerate, text: "Hold RECOVERY on the mission computer, press RESET, release RECOVERY. The station waits for the module."}
+  - {id: orin_identify, text: "The station reads the module EEPROM."}
+  - {id: orin_flash, text: "The station flashes the mission computer image 3.1.4 (about 8 minutes). Do not move the USB cable.", versions: {orin: 3.1.4}}
+  - {id: orin_verify, text: "The station reads every partition back."}
+  - {id: orin_first_boot, text: "The module boots once; the station checks its services."}
+  - {id: orin_fuse, text: "The station burns the module fuses."}
+  - {id: release_unit, text: "The station prints the software certificate label. Stick it next to the airframe label."}

@@ -1,0 +1,31 @@
+# How the analysis decides that failures are systemic rather than bad luck. A failure code is systemic in one place
+# (a slot, a lot, a release, an operator...) when more of the code's failures fall there than chance explains: given
+# all of its failures, how many landed in this place compared with its share of the attempts (one-sided Fisher exact
+# test) must be below alpha divided by the number of places the code could be pinned on (Bonferroni, per code). The place also needs `min_failures` failures and `min_lift` times the rest of the line's rate.
+alpha: 0.05
+min_failures: 3
+min_lift: 2.5
+max_issues_per_code: 3
+widespread_rate: 0.10      # a code failing this often everywhere is systemic even without one place to point at
+dimensions: [slot, fixture, station, operator, release, fc_rev, fc_lot, pmu_rev, pmu_lot, orin_sku, orin_fab, orin_batch]
+# When two places explain the same failures (a slot is also in a fixture, a fixture in a station), the narrower one
+# is reported unless the wider one is clearly better. Lower number: more specific.
+specificity: {slot: 0, operator: 0, fc_lot: 0, pmu_lot: 0, orin_batch: 0, fc_rev: 1, pmu_rev: 1, orin_sku: 1, orin_fab: 1, release: 1, fixture: 2, station: 3}
+# What to do about a systemic issue, by where it lives
+actions:
+  slot: "Take the slot out of service and inspect the fixture: pogo block, probe cable, USB cable, power."
+  fixture: "Inspect the whole fixture: shared harness, hub, power supply."
+  station: "Check the station: host USB controller, tool versions, network."
+  operator: "Review the step with the operator at the station; check whether the work instruction is clear."
+  release: "Engineering: stop the rollout of this release until the cause is understood."
+  fc_rev: "Engineering: the release does not handle this board revision."
+  pmu_rev: "Engineering: the release does not handle this board revision."
+  orin_sku: "Engineering: the image does not handle this module SKU."
+  orin_fab: "Engineering and quality: compare against the supplier's change notice for this FAB."
+  fc_lot: "Quality: quarantine the lot and open a supplier complaint."
+  pmu_lot: "Quality: quarantine the lot and open a supplier complaint."
+  orin_batch: "Quality: quarantine the module batch and open a supplier complaint."
+# leading indicators: not failures yet, but they come before failures
+watch:
+  slow_link_share: 0.5     # a slot whose modules mostly enumerate at USB2 has a cable or port going bad
+  min_units: 3

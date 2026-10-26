@@ -1,0 +1,38 @@
+# The microcontrollers on the airframe and where things live in their flash. firmware/src/layout.h must agree
+# (tests/test_targets.py checks it). `qemu` is only for the emulated line.
+fc:
+  name: Flight controller
+  flash_base: 0x08000000
+  image_max: 0x40000        # 256 KiB for the image
+  erase_block: 0x4000       # erase granularity used for the image region
+  otp: 0x080C0000
+  config: 0x080E0000
+  config_block: 0x20000
+  reset_command: system_reset   # QEMU; OpenOCD would be "reset halt" before and "resume" after
+  banner_timeout_s: 4
+  qemu: {machine: netduinoplus2}
+pmu:
+  name: Power module
+  flash_base: 0x08000000
+  image_max: 0x10000
+  erase_block: 0x400
+  otp: 0x0801F000
+  config: 0x0801F800
+  config_block: 0x800
+  reset_command: system_reset
+  banner_timeout_s: 4
+  qemu: {machine: stm32vldiscovery}
+orin:
+  name: Mission computer (Jetson Orin NX class)
+  usb_recovery_ids: ["0955:7323", "0955:7423"]   # Orin NX 16 GB / 8 GB in force recovery
+  eeprom:
+    size: 256
+    crc_byte: 255          # CRC-8 over bytes 0-254, as the module EEPROM layout specifies
+    board_id: [0, 2]       # little-endian u16, e.g. 3767
+    sku: [2, 6]            # ASCII, e.g. "0000"
+    fab: [6, 9]            # ASCII, e.g. "300"
+    serial: [9, 24]        # ASCII module serial
+    batch: [24, 32]        # ASCII manufacturing batch (simplified layout)
+  # what the flash costs, for the clock on an emulated line (a real station measures it)
+  usb3_mb_per_s: 30
+  usb2_mb_per_s: 9
