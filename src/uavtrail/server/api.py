@@ -155,7 +155,10 @@ def codes_(_: Who) -> dict[str, Any]:
     """The failure vocabulary (config/codes.yaml): what each code means and who owns it."""
     from ..config import codes
 
-    return {k: {"label": v.get("label", k), "owner": v.get("owner"), "signal": bool(v.get("signal"))} for k, v in codes().items()}
+    return {
+        k: {"label": v.get("label", k), "owner": v.get("owner"), "signal": bool(v.get("signal"))}
+        for k, v in codes().items()
+    }
 
 
 @app.get("/api/slots")

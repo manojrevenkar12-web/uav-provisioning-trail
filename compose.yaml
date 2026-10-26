@@ -1,0 +1,31 @@
+# docker compose up: PostgreSQL, one shift on the emulated line (QEMU and the station software), then the
+# traceability server and console on http://localhost:8000.
+x-uav: &uav
+  build: .
+  environment:
+    UAV_DATABASE_URL: postgresql+psycopg://uav:uav@postgres:5432/uav
+
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: uav
+      POSTGRES_PASSWORD: uav
+      POSTGRES_DB: uav
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U uav"]
+      interval: 3s
+      retries: 20
+
+  line:
+    <<: *uav
+    command: ["uavsim", "run", "campaigns/dev/shift-a.yaml"]
+    depends_on:
+      postgres: { condition: service_healthy }
+    restart: "no"
+
+  server:
+    <<: *uav
+    ports: ["8000:8000"]
+    depends_on:
+      line: { condition: service_completed_successfully }
